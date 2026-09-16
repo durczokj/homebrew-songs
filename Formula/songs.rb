@@ -6,17 +6,27 @@ class Songs < Formula
   version "0.1.1"
 
   depends_on "openjdk@21"
-  depends_on "ffmpeg"
-  depends_on "yt-dlp"
-  depends_on "node"
+
+  # ffmpeg, yt-dlp and node are runtime prerequisites rather than formula
+  # dependencies: declaring them forces a full source rebuild on Intel macOS,
+  # where Homebrew no longer ships bottles. `songs doctor` reports them.
 
   def install
     libexec.install "songs.jar"
     bin.write_jar_script libexec/"songs.jar", "songs", java_version: "21"
   end
 
-  def post_install
-    system bin/"songs", "setup-browser"
+  def caveats
+    <<~EOS
+      songs needs these tools on your PATH:
+        brew install ffmpeg yt-dlp node
+
+      Then install the browser used for Apple Music extraction:
+        songs setup-browser
+
+      Verify everything with:
+        songs doctor
+    EOS
   end
 
   test do
