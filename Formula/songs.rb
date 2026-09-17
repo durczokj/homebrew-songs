@@ -1,9 +1,9 @@
 class Songs < Formula
   desc "Synchronize music playlists"
   homepage "https://github.com/durczokj/songs"
-  url "https://github.com/durczokj/songs/releases/download/v0.1.3/songs.jar"
-  sha256 "bbddbb10035542ff9685f99495f37ae4c88eef509340b6306a36c4b7941a1659"
-  version "0.1.3"
+  url "https://github.com/durczokj/songs/releases/download/v0.1.4/songs.jar"
+  sha256 "3fe0171c0e2fd849eef12494c725f23a0e60e124f4da601e954c62451a306c70"
+  version "0.1.4"
 
   depends_on "openjdk@21"
 
