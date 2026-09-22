@@ -1,9 +1,9 @@
 class Songs < Formula
   desc "Synchronize music playlists"
   homepage "https://github.com/durczokj/songs"
-  url "https://github.com/durczokj/songs/releases/download/v0.2.0/songs.jar"
-  sha256 "0f0147f23f500dad76c9618190eeececcaee9cd1bf754cff9fc8ef3cbaba624c"
-  version "0.2.0"
+  url "https://github.com/durczokj/songs/releases/download/v0.2.3/songs.jar"
+  sha256 "1c98ea62d3a832b1efcf59841af3d20919ea125a7d97faf0de61dcdab8e8e540"
+  version "0.2.3"
 
   depends_on "openjdk@21"
 
@@ -13,7 +13,7 @@ class Songs < Formula
 
   def install
     libexec.install "songs.jar"
-    bin.write_jar_script libexec/"songs.jar", "songs", java_version: "21"
+    bin.write_jar_script libexec/"songs.jar", "songs", java_version: "25"
   end
 
   def caveats
